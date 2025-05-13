@@ -35,12 +35,12 @@ This project implements a five-cycle non-pipelined RISC processor using Verilog 
 
 # The design.sv file will have all the subcomponents of the processor and the following modules:
 ### Module: `eightbitRegwithLoad`
-- **Type:** Behavioral
+- **Type:** Behavioral coding 
 - **Inputs:** `clk`, `Reset`, `load`, `[7:0] Datain`
 - **Outputs:** `[7:0] Dataout`
 
 ### Module: `RegisterFile`
-- **Type:** Structural 
+- **Type:** Structural coding 
 - **Inputs:** 
   - `clk`, `Reset`
   - `RegFileRead`, `RegFileWrite`
@@ -55,13 +55,13 @@ This project implements a five-cycle non-pipelined RISC processor using Verilog 
   - 2 × eightbitRegwithLoad
 
 ### Module: `InstMEM`
-- **Type:** Behavioral
+- **Type:** Behavioral coding 
 - **Inputs:** `clk`, `Reset`
 - **Outputs:** `[24:0] Dataout`, `[4:0] Opcode`
 - **Memory Declaration:** reg [24:0] instmemory [0:255]
 
 ### Module: `SRAM`
-- **Style:** Behavioral
+- **Style:** Behavioral coding 
 - **Inputs:**
   - `clk`
   - `Reset`
@@ -73,7 +73,7 @@ This project implements a five-cycle non-pipelined RISC processor using Verilog 
 - **Memory Declaration:** reg [7:0] datamem [0:255]
 
 ### Module: `Stack`
-- **Style:** Partial Structural
+- **Style:** Partial Structural coding 
 - **Inputs:**
   - `clk`
   - `Reset`
@@ -87,7 +87,7 @@ This project implements a five-cycle non-pipelined RISC processor using Verilog 
   - Stack pointer management logic (to handle push/pop operations)
 
 ### Module: `ALU`
-- **Style:** Structural
+- **Style:** Structural coding 
 - **Inputs:**
   - `clk`
   - `Reset`
@@ -107,7 +107,7 @@ This project implements a five-cycle non-pipelined RISC processor using Verilog 
   - Some `MUX4to1_8bit`
 
 ### Module: `TimingGen`
-- **Style:** Structural
+- **Style:** Structural coding 
 - **Inputs:**
   - `clk`
   - `Reset`
@@ -122,7 +122,7 @@ This project implements a five-cycle non-pipelined RISC processor using Verilog 
   - Some Mux and Decoder modules
 
 ### Module: `ProgCounter`
-- **Style:** Structural
+- **Style:** Structural coding
 - **Inputs:**
   - `clk`
   - `Reset`
