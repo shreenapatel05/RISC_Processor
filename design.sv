@@ -716,38 +716,31 @@ endmodule
 
 /////////////////////////////////////////
 
-module TimingGen(
-    input clk,
-    input reset,
-    output reg T0, T1, T2, T3, T4
-);
-
-    reg [2:0] state;  // 3-bit state variable: 0 to 4
-
-    always @(posedge clk or posedge reset) begin
-        if (reset)
-            state <= 3'd0;  // Start from T0 on reset
-        else
-            state <= (state == 3'd4) ? 3'd0 : state + 3'd1;
-    end
-
-    always @(*) begin
-        // Default all low
-        T0 = 0;
-        T1 = 0;
-        T2 = 0;
-        T3 = 0;
-        T4 = 0;
-
-        case (state)
-            3'd0: T0 = 1;
-            3'd1: T1 = 1;
-            3'd2: T2 = 1;
-            3'd3: T3 = 1;
-            3'd4: T4 = 1;
-        endcase
-    end
-
+module TimingGen( clk, Reset, T0, T1, T2, T3, T4);
+    input clk;
+    input Reset;
+    output wire T0;
+    output wire T1;
+    output wire T2;
+    output wire T3;
+    output wire T4;
+    
+  wire [2:0] Sum;
+  wire [7:0] dec_out;
+  wire [2:0] Dataout;
+  wire [2:0] Y;
+  
+  Adder3bit inst1(3'b1, Dataout, Reset, Sum);
+  MUX2to1_3bit inst3(T4, Sum, 3'b0, Y);
+  threebitRegwithLoad inst4(clk, Y, Reset, 1'b1, Dataout);
+  decoder3to8_withE inst2(Dataout, 1'b1, dec_out);
+    
+    assign T0 = dec_out[0];
+    assign T1 = dec_out[1];
+    assign T2 = dec_out[2];
+    assign T3 = dec_out[3];
+    assign T4 = dec_out[4];
+  
 endmodule
 
 /////////////////////////////////////////
