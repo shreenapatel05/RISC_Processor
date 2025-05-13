@@ -136,3 +136,49 @@ This project implements a five-cycle non-pipelined RISC processor using Verilog 
   - Some arithmetic logic modules
   - Some mux and D Flipflop
 
+### Module: `INport`
+- **Style:** Structural coding
+- **Inputs:**
+  - `clk`
+  - `Reset`
+  - `INportRead`
+  - `[7:0] InpExtWorld1`
+  - `[7:0] InpExtWorld2`
+  - `[7:0] InpExtWorld3`
+  - `[7:0] InpExtWorld4`
+  - `[7:0] Address`
+- **Output:**
+  - `[7:0] Dataout`
+
+### Module: `OUTport`
+- **Style:** Structural coding
+- **Inputs:**
+  - `clk`
+  - `Reset`
+  - `[7:0] Address`
+  - `[7:0] Datain`
+  - `OUTportWrite`
+- **Outputs:**
+  - `[7:0] OutExtWorld1`
+  - `[7:0] OutExtWorld2`
+  - `[7:0] OutExtWorld3`
+  - `[7:0] OutExtWorld4`
+
+### Module: `ControlLogic`
+- **Style:** Structural coding 
+- **Inputs:**
+  - `clk`
+  - `Reset`
+  - `T1`, `T2`, `T3`, `T4`
+  - `Zflag`
+  - `Cflag`
+  - `[4:0] Opcode`
+- **Outputs (Control Signals):**
+  - `PCupdate`
+  - `SRAMRead`, `SRAMWrite`
+  - `StackRead`, `StackWrite`
+  - `ALUSave`, `ZflagSave`, `CflagSave`
+  - `INportRead`, `OUTportWrite`
+  - `RegFileRead`, `RegFileWrite`
+- **Comments:**
+  - Each control signal should be implemented using an instance of `MUX32to1_1bit_withE`
