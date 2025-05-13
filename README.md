@@ -105,3 +105,34 @@ This project implements a five-cycle non-pipelined RISC processor using Verilog 
 - **Internal Instances:**
   - Some arithmetic logic modules
   - Some `MUX4to1_8bit`
+
+### Module: `TimingGen`
+- **Style:** Structural
+- **Inputs:**
+  - `clk`
+  - `Reset`
+- **Outputs:**
+  - `T0`
+  - `T1`
+  - `T2`
+  - `T3`
+  - `T4`
+- **Internal Instances:**
+  - Some arithmetic logic modules
+  - Some Mux and Decoder modules
+
+### Module: `ProgCounter`
+- **Style:** Structural
+- **Inputs:**
+  - `clk`
+  - `Reset`
+  - `PCenable`
+  - `PCupdate`
+  - `[7:0] CAddress`
+- **Outputs:**
+  - `[7:0] PC`
+  - `[7:0] PC_D2`
+- **Internal Instances:**
+  - Some arithmetic logic modules
+  - Some mux and D Flipflop
+
