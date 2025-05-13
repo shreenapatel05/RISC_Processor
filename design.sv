@@ -604,44 +604,6 @@ endmodule
 
 /////////////////////////////////////////
 
-// module InstMEM (clk, Reset, Address, InstRead, Dataout, Opcode, Destin, Source1, Source2, Imm);
-//   input clk;
-//   input Reset;
-//   input [7:0] Address;
-//   input InstRead;
-//   output reg [24:0] Dataout;
-//   output reg [4:0] Opcode;
-//   output reg [3:0] Destin;
-//   output reg [3:0] Source1;
-//   output reg [3:0] Source2;
-//   output reg [7:0] Imm;
-
-//     reg [24:0] instmemory [0:255];
-
-//     initial begin
-//         $readmemb("instructions.mem", instmemory);
-//     end
-
-//     always @(posedge clk or posedge Reset) begin
-//         if (Reset) begin
-//             Dataout <= 25'b0;
-//             Opcode  <= 5'b0;
-//             Destin  <= 4'b0;
-//             Source1 <= 4'b0;
-//             Source2 <= 4'b0;
-//             Imm     <= 8'b0;
-//         end else begin
-//             Dataout <= instmemory[Address];
-//             Opcode  <= instmemory[Address][24:20];  
-//             Destin  <= instmemory[Address][19:16]; 
-//             Source1 <= instmemory[Address][15:12]; 
-//             Source2 <= instmemory[Address][11:8];  
-//             Imm     <= instmemory[Address][7:0];   
-//         end
-//     end
-
-// endmodule 
-
 module InstMEM (
     input clk,
     input Reset,
@@ -754,32 +716,6 @@ endmodule
 
 /////////////////////////////////////////
 
-// module TimingGen( clk, Reset, T0, T1, T2, T3, T4);
-//     input clk;
-//     input Reset;
-//     output wire T0;
-//     output wire T1;
-//     output wire T2;
-//     output wire T3;
-//     output wire T4;
-    
-//   wire [2:0] Sum;
-//   wire [7:0] dec_out;
-//   wire [2:0] Dataout;
-//   wire [2:0] Y;
-  
-//   Adder3bit inst1(3'b1, Dataout, Reset, Sum);
-//   MUX2to1_3bit inst3(T4, Sum, 3'b0, Y);
-//   threebitRegwithLoad inst4(clk, Y, Reset, 1'b1, Dataout);
-//   decoder3to8_withE inst2(Dataout, 1'b1, dec_out);
-    
-//     assign T0 = dec_out[0];
-//     assign T1 = dec_out[1];
-//     assign T2 = dec_out[2];
-//     assign T3 = dec_out[3];
-//     assign T4 = dec_out[4];
-  
-// endmodule
 module TimingGen(
     input clk,
     input reset,
@@ -813,7 +749,6 @@ module TimingGen(
     end
 
 endmodule
-
 
 /////////////////////////////////////////
 
