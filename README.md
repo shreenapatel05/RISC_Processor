@@ -1,7 +1,7 @@
 # RISC_Processor
 This project implements a five-cycle non-pipelined RISC processor using Verilog HDL. The processor executes each instruction in five sequential stages: Fetch, Decode, Execute, Memory, and Write Back, without overlapping operations.
 
-### How to run the code in EDA playground?
+## How to run the code in EDA playground?
 - Login using your account -> main file is already created -> click on add file option in panel where `design.sv` is created , name it `Processor.v` -> repeat the same and name new file as `instructions.mem`(if you don't name the file as same than change the file in Line 623 in design.sv file) -> paste or write the code as given in repository.
 - After code is ready, on left most side go to the `Tools & simulations` -> Select `Icarus Verliog 12.0` in drop down menu  -> Select or tick on `open EPWAVE after run` -> Click on RUN on top most bar of the page.
 - The title of whole file can be changed from `Share` in the bottom panel -> Write your desired name in orange lined box beside drop down menu. 
