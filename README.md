@@ -8,6 +8,11 @@ This project implements a five-cycle non-pipelined RISC processor using Verilog 
 - Here, design.sv is the main system design file where each component like ALU, MUX etc is defined, whereas Processor.v contains how the components are interlinked.
 - The instruction.mem consists of 25bit instruction set each, which is supposed to be framed according to the desired output.
 - The testbench.sv readily verify the functionality of a design through simulations i.e. Waveform.
+
+## EDA Playground Link
+You can try out and simulate the RISC processor directly here:
+https://www.edaplayground.com/x/itj9 
+
   
 # The Processor.v file have the following module:
 ## Module: `RISCprocessor`
