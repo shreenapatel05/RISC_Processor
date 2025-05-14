@@ -183,3 +183,8 @@ This project implements a five-cycle non-pipelined RISC processor using Verilog 
 - **Comments:**
   - Each control signal should be implemented using an instance of `MUX32to1_1bit_withE`
 ### Note: The three examples of waveforms is w.r.t three different instructions set given in folder - Example set.
+
+### How to run the code in EDA playground?
+- Login using your account -> main file is already created -> click on add file option in panel where design.sv is created , name it "Processor.v" -> repeat the same and name new file as"instructions.mem"(if you don't name the file as same than change the file in Line 623 in design.sv file) -> paste or write the code as given in repository.
+- Here, design.sv is the main system design file where each component like ALU, MUX is defined, whereas Processor.v contains how the components are interlinked.
+- The instruction.mem consists of 25bit instruction set each, which is supposed to be framed according to the desired output. 
