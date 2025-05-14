@@ -1,6 +1,14 @@
 # RISC_Processor
 This project implements a five-cycle non-pipelined RISC processor using Verilog HDL. The processor executes each instruction in five sequential stages: Fetch, Decode, Execute, Memory, and Write Back, without overlapping operations.
 
+### How to run the code in EDA playground?
+- Login using your account -> main file is already created -> click on add file option in panel where `design.sv` is created , name it `Processor.v` -> repeat the same and name new file as `instructions.mem`(if you don't name the file as same than change the file in Line 623 in design.sv file) -> paste or write the code as given in repository.
+- After code is ready, on left most side go to the `Tools & simulations` -> Select `Icarus Verliog 12.0` in drop down menu  -> Select or tick on `open EPWAVE after run` -> Click on RUN on top most bar of the page.
+- The title of whole file can be changed from `Share` in the bottom panel -> Write your desired name in orange lined box beside drop down menu. 
+- Here, design.sv is the main system design file where each component like ALU, MUX etc is defined, whereas Processor.v contains how the components are interlinked.
+- The instruction.mem consists of 25bit instruction set each, which is supposed to be framed according to the desired output.
+- The testbench.sv readily verify the functionality of a design through simulations i.e. Waveform.
+  
 # The Processor.v file have the following module:
 ## Module: `RISCprocessor`
 
@@ -184,11 +192,5 @@ This project implements a five-cycle non-pipelined RISC processor using Verilog 
   - Each control signal should be implemented using an instance of `MUX32to1_1bit_withE`
 ### Note: The three examples of waveforms is w.r.t three different instructions set given in folder - Example set and their binary fomrat(25bit instruction) in instruction.txt file.
 
-### How to run the code in EDA playground?
-- Login using your account -> main file is already created -> click on add file option in panel where `design.sv` is created , name it `Processor.v` -> repeat the same and name new file as `instructions.mem`(if you don't name the file as same than change the file in Line 623 in design.sv file) -> paste or write the code as given in repository.
-- After code is ready, on left most side go to the `Tools & simulations` -> Select `Icarus Verliog 12.0` in drop down menu  -> Select or tick on `open EPWAVE after run` -> Click on RUN on top most bar of the page.
-- The title of whole file can be changed from `Share` in the bottom panel -> Write your desired name in orange lined box beside drop down menu. 
-- Here, design.sv is the main system design file where each component like ALU, MUX etc is defined, whereas Processor.v contains how the components are interlinked.
-- The instruction.mem consists of 25bit instruction set each, which is supposed to be framed according to the desired output.
-- The testbench.sv readily verify the functionality of a design through simulations i.e. Waveform.
+
 
