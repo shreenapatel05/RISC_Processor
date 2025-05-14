@@ -182,3 +182,4 @@ This project implements a five-cycle non-pipelined RISC processor using Verilog 
   - `RegFileRead`, `RegFileWrite`
 - **Comments:**
   - Each control signal should be implemented using an instance of `MUX32to1_1bit_withE`
+### Note: The three examples of waveforms is w.r.t three different instructions set given in folder - Example set.
