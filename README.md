@@ -15,7 +15,7 @@ https://www.edaplayground.com/x/itj9
 
   
 # The Processor.v file have the following module:
-## Module: `RISCprocessor`
+### Module: `RISCprocessor`
 
 ### Inputs
 - `clk`
